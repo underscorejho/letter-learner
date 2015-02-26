@@ -1,0 +1,72 @@
+
+body {
+	background-image: url(outrageousbackground.png);
+	background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#welcomemessage {
+	width : 400px;
+	margin: auto;
+	text-align: center;
+}
+
+#startlink {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#startbutton {
+	display: block;
+    margin: auto;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+#sidebar {
+	float: left;
+	width: 200px;
+	margin: -10px 0px 0px 0px;
+	padding-left: 10px;
+	padding-right:10px;
+	padding-top: 20px;	
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 110%;
+	border: 1px black solid;
+	background-color: #f0f0f0;	
+}
+
+#typehere {
+	margin: auto;
+	margin-top: 100px;
+}
+
+#typethis {
+	text-align: center;
+}
+
+#congratsdiv {
+	text-align: center;
+	height: 500px;
+}
+
+#congratsdiv img {
+	height: 360px;
+	width: 400px;
+	margin-left: -30px;
+}
+
+#letter {
+	font-size: 30px;
+}
+
+#typehere p {
+	text-align: center;
+	margin-bottom: 80px;
+}
