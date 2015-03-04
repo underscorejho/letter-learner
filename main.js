@@ -6,15 +6,24 @@ var letterlearner = function () {
 	
 	if(highscore < localStorage.getItem("highscore"))
 		highscore = localStorage.getItem("highscore");
-	
-	practice();
+	// add switch for levels
+	practice(); //(level 1)
 	
 	return 0;
 	
 }
 
 var initialize_lower = function() {
-	return String.fromCharCode(Math.floor(Math.random()*26)+97);
+  return String.fromCharCode(Math.floor(Math.random()*26)+97); // random lowercase letter
+}
+var initialize_upper = function() {
+  return String.fromCharCode(Math.floor(Math.random()*26)+65); // random uppercase letter
+}
+var initialize_symbol = function() {
+  return String.fromCharCode(Math.floor(Math.random()); // random symbol //// not sure what ASCIIs to use
+}
+var initialize_number = function() {
+  return String.fromCharCode(Math.floor(Math.random()*10)+48); // random digit 0 - 9
 }
 
 var practice = function() {

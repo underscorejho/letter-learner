@@ -1,0 +1,59 @@
+
+Users and accounts
+ - username
+ - password
+ - saved highscore
+ - acheivements
+ - https://stormpath.com/blog/build-nodejs-express-stormpath-app/ 
+
+Levels
+ - 26 correct to move up a level
+ - faster times
+ - different capitalizations
+ - symbols
+ - numbers
+ - phrases
+ - level select
+ - replay levels
+ - level descriptions
+
+ level 1
+  lowercase, no time, 26 random letters
+ level 2
+  lowercase, timed
+ level 3
+  lower + upper case
+ level 4
+  lower + upper case, timed
+ level 5
+  faster level 4
+ level 6
+  faster level 5
+ level 7 
+  symbols
+ level 8
+  letters + symbols
+ level 9
+  level 8 timed
+ level 10
+  level 9
+ level 11
+  all + numbers
+ level 12
+  level 11 timed
+ level 13
+  level 12 faster
+ level 14
+  timed phrases
+ level 15
+  timed sentences
+
+
+Practice modes
+
+New CSS
+
+keyboard image/guide
+
+Fix constant reload issue
+
