@@ -1,6 +1,7 @@
 
 var ncorrect = 0;
 var highscore = 0;
+	var oldletter = "a"; //// shouldn't have to have a default value
 
 var letterlearner = function () {
 	
@@ -20,7 +21,7 @@ var initialize_upper = function() {
   return String.fromCharCode(Math.floor(Math.random()*26)+65); // random uppercase letter
 }
 var initialize_symbol = function() {
-  return String.fromCharCode(Math.floor(Math.random()); // random symbol //// not sure what ASCIIs to use
+  return String.fromCharCode(Math.floor(Math.random())); // random symbol //// not sure what ASCIIs to use
 }
 var initialize_number = function() {
   return String.fromCharCode(Math.floor(Math.random()*10)+48); // random digit 0 - 9
@@ -28,7 +29,6 @@ var initialize_number = function() {
 
 var practice = function() {
 	var letter = initialize_lower();
-	//var ncorrect = 0;
 	
 	ncorrect = localStorage.getItem("ncorrect");
 			
@@ -43,22 +43,28 @@ var practice = function() {
 	}
 	
 	$(document).ready(function(){
-		$('#keyinput').keyup(function(){
-			if (document.getElementById('keyinput').value === letter) {
+		$('#keyinput').keydown(function(){
+			if (this.value === oldletter) {
        			 ncorrect++;
        			 document.getElementById('ncorrect').innerHTML = ncorrect;
        			 console.log(ncorrect);
        			 if(ncorrect > highscore)
-					 localStorage.setItem("highscore", ncorrect);
-				 localStorage.setItem("ncorrect", ncorrect);
-       			 document.location.href = "practice.html";
+				localStorage.setItem("highscore", ncorrect);
+			 localStorage.setItem("ncorrect", ncorrect);
+       			 //document.location.href = "practice.html";
+                         this.value = "";
+                         oldletter = letter;
+                         letterlearner();
        			}
-    		else {
+    			else {
       			 ncorrect = 0;
       			 document.getElementById('ncorrect').innerHTML = ncorrect;
       			 console.log(ncorrect);
       			 localStorage.setItem("ncorrect", ncorrect);
-      			 document.location.href = "practice.html";
+      			 //document.location.href = "practice.html";
+                         this.value = "";
+                         oldletter = letter;
+                         letterlearner();
       			}
       	});
 	});
