@@ -10,11 +10,13 @@ var letterlearner = function () {
 
         currentlevel = localStorage.getItem("currentlevel");
         if(!currentlevel)
-                currentlevel = 1;
+                currentlevel = 2;
 
 	switch(currentlevel) {
           case 1:
 	    practice(); //(level 1)
+          case 2:
+            level2();
           default:
             console.log("ERROR: not a level");
 	}
@@ -42,7 +44,6 @@ var practice = function() {
 	ncorrect = localStorage.getItem("ncorrect");
 			
 	document.getElementById('letter').innerHTML = letter;
-	document.getElementById('prompt').innerHTML = "Let's Go: Type Here!";
 	document.getElementById('ncorrect').innerHTML = ncorrect;
 	document.getElementById('highscore').innerHTML = highscore;
 	
@@ -61,8 +62,6 @@ var practice = function() {
 				localStorage.setItem("highscore", ncorrect);
 			 localStorage.setItem("ncorrect", ncorrect);
        			 document.location.href = "practice.html";
-                         //this.value = "";
-                         //letterlearner();
        			}
     			else {
       			 ncorrect = 0;
@@ -70,14 +69,94 @@ var practice = function() {
       			 console.log(ncorrect + ", wrong");
       			 localStorage.setItem("ncorrect", ncorrect);
       			 document.location.href = "practice.html";
-                         //this.value = "";
-                         //letterlearner();
       			}
       	});
 	});
 	
 	return ncorrect;
+}
+
+var level2 = function() {
+	var letter = initialize_lower();
 	
+        var enoughtime = 1;
+        var notenoughtime = function() {
+            enoughtime = 0;
+        }
+        
+	ncorrect = localStorage.getItem("ncorrect");
+			
+	document.getElementById('letter').innerHTML = letter;
+	document.getElementById('ncorrect').innerHTML = ncorrect;
+	document.getElementById('highscore').innerHTML = highscore;
+	
+	if (ncorrect >= 100){
+		localStorage.setItem("ncorrect", 0);
+		congrats();
+	}
+	
+        var timer = setTimeout(notenoughtime, 5000);
+
+	$(document).ready(function(){
+		$('#keyinput').keyup(function(){
+			if (this.value === letter && enoughtime) {
+       			 ncorrect++;
+       			 document.getElementById('ncorrect').innerHTML = ncorrect;
+       			 console.log(ncorrect);
+       			 if(ncorrect > highscore)
+				localStorage.setItem("highscore", ncorrect);
+			 localStorage.setItem("ncorrect", ncorrect);
+       			 document.location.href = "practice.html";
+       			}
+    			else {
+      			 ncorrect = 0;
+      			 document.getElementById('ncorrect').innerHTML = ncorrect;
+      			 console.log(ncorrect + ", wrong");
+      			 localStorage.setItem("ncorrect", ncorrect);
+      			 document.location.href = "practice.html";
+      			}
+      	});
+	});
+	
+	return ncorrect;
+}
+
+var level3 = function() {
+	var letter = initialize_lower(); ////////////////////// add upper case letters
+	
+	ncorrect = localStorage.getItem("ncorrect");
+			
+	document.getElementById('letter').innerHTML = letter;
+	document.getElementById('ncorrect').innerHTML = ncorrect;
+	document.getElementById('highscore').innerHTML = highscore;
+	
+	if (ncorrect >= 100){
+		localStorage.setItem("ncorrect", 0);
+		congrats();
+	}
+	
+	$(document).ready(function(){
+		$('#keyinput').keyup(function(){
+			if (this.value === letter) {
+       			 ncorrect++;
+       			 document.getElementById('ncorrect').innerHTML = ncorrect;
+       			 console.log(ncorrect);
+       			 if(ncorrect > highscore)
+				localStorage.setItem("highscore", ncorrect);
+			 localStorage.setItem("ncorrect", ncorrect);
+       			 document.location.href = "practice.html";
+       			}
+    			else {
+      			 ncorrect = 0;
+      			 document.getElementById('ncorrect').innerHTML = ncorrect;
+      			 console.log(ncorrect + ", wrong");
+      			 localStorage.setItem("ncorrect", ncorrect);
+      			 document.location.href = "practice.html";
+      			}
+      	});
+	});
+	
+	return ncorrect;
 }
 
 var congrats = function () {
