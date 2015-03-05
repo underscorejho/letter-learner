@@ -1,15 +1,24 @@
 
 var ncorrect = 0;
 var highscore = 0;
-	var oldletter = "a"; //// shouldn't have to have a default value
+var currentlevel;
 
 var letterlearner = function () {
 	
 	if(highscore < localStorage.getItem("highscore"))
 		highscore = localStorage.getItem("highscore");
-	// add switch for levels
-	practice(); //(level 1)
-	
+
+        currentlevel = localStorage.getItem("currentlevel");
+        if(!currentlevel)
+                currentlevel = 1;
+
+	switch(currentlevel) {
+          case 1:
+	    practice(); //(level 1)
+          default:
+            console.log("ERROR: not a level");
+	}
+
 	return 0;
 	
 }
@@ -43,28 +52,26 @@ var practice = function() {
 	}
 	
 	$(document).ready(function(){
-		$('#keyinput').keydown(function(){
-			if (this.value === oldletter) {
+		$('#keyinput').keyup(function(){
+			if (this.value === letter) {
        			 ncorrect++;
        			 document.getElementById('ncorrect').innerHTML = ncorrect;
        			 console.log(ncorrect);
        			 if(ncorrect > highscore)
 				localStorage.setItem("highscore", ncorrect);
 			 localStorage.setItem("ncorrect", ncorrect);
-       			 //document.location.href = "practice.html";
-                         this.value = "";
-                         oldletter = letter;
-                         letterlearner();
+       			 document.location.href = "practice.html";
+                         //this.value = "";
+                         //letterlearner();
        			}
     			else {
       			 ncorrect = 0;
       			 document.getElementById('ncorrect').innerHTML = ncorrect;
-      			 console.log(ncorrect);
+      			 console.log(ncorrect + ", wrong");
       			 localStorage.setItem("ncorrect", ncorrect);
-      			 //document.location.href = "practice.html";
-                         this.value = "";
-                         oldletter = letter;
-                         letterlearner();
+      			 document.location.href = "practice.html";
+                         //this.value = "";
+                         //letterlearner();
       			}
       	});
 	});
