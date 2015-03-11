@@ -30,7 +30,11 @@ Levels
  level 6
   faster level 5
  level 7 
-  symbols
+  symbols 1
+ level 7.1
+  symbols 2
+ level 7.2
+  symbols, timed
  level 8
   letters + symbols
  level 9
