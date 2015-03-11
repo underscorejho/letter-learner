@@ -10,13 +10,23 @@ var letterlearner = function () {
 
         currentlevel = localStorage.getItem("currentlevel");
         if(!currentlevel)
-                currentlevel = 2;
+                currentlevel = 3;
 
 	switch(currentlevel) {
           case 1:
 	    practice(); //(level 1)
           case 2:
             level2();
+          case 3:
+            level3();
+          case 4:
+            level4();
+          case 5:
+            level5();
+          case 6:
+            level6();
+          case 7:
+            level7();
           default:
             console.log("ERROR: not a level");
 	}
@@ -38,8 +48,8 @@ var initialize_number = function() {
   return String.fromCharCode(Math.floor(Math.random()*10)+48); // random digit 0 - 9
 }
 
-var practice = function() {
-	var letter = initialize_lower();
+var practice = function() { // level 1
+	var letter = initialize_lower(); // what letters/symbols
 	
 	ncorrect = localStorage.getItem("ncorrect");
 			
@@ -57,7 +67,6 @@ var practice = function() {
 			if (this.value === letter) {
        			 ncorrect++;
        			 document.getElementById('ncorrect').innerHTML = ncorrect;
-       			 console.log(ncorrect);
        			 if(ncorrect > highscore)
 				localStorage.setItem("highscore", ncorrect);
 			 localStorage.setItem("ncorrect", ncorrect);
@@ -66,7 +75,6 @@ var practice = function() {
     			else {
       			 ncorrect = 0;
       			 document.getElementById('ncorrect').innerHTML = ncorrect;
-      			 console.log(ncorrect + ", wrong");
       			 localStorage.setItem("ncorrect", ncorrect);
       			 document.location.href = "practice.html";
       			}
@@ -77,7 +85,7 @@ var practice = function() {
 }
 
 var level2 = function() {
-	var letter = initialize_lower();
+	var letter = initialize_lower(); // what letters/symbols
 	
         var enoughtime = 1;
         var notenoughtime = function() {
@@ -95,14 +103,13 @@ var level2 = function() {
 		congrats();
 	}
 	
-        var timer = setTimeout(notenoughtime, 5000);
+        var timer = setTimeout(notenoughtime, 5000); // how much time
 
 	$(document).ready(function(){
 		$('#keyinput').keyup(function(){
 			if (this.value === letter && enoughtime) {
        			 ncorrect++;
        			 document.getElementById('ncorrect').innerHTML = ncorrect;
-       			 console.log(ncorrect);
        			 if(ncorrect > highscore)
 				localStorage.setItem("highscore", ncorrect);
 			 localStorage.setItem("ncorrect", ncorrect);
@@ -111,7 +118,6 @@ var level2 = function() {
     			else {
       			 ncorrect = 0;
       			 document.getElementById('ncorrect').innerHTML = ncorrect;
-      			 console.log(ncorrect + ", wrong");
       			 localStorage.setItem("ncorrect", ncorrect);
       			 document.location.href = "practice.html";
       			}
@@ -122,7 +128,13 @@ var level2 = function() {
 }
 
 var level3 = function() {
-	var letter = initialize_lower(); ////////////////////// add upper case letters
+	var letter = Math.floor(Math.random()*2); // multiple random symbols // what letters/symbols
+        switch(letter) {
+          case 0:
+            letter = initialize_lower();
+          case 1:
+            letter = initialize_upper();
+        }
 	
 	ncorrect = localStorage.getItem("ncorrect");
 			
@@ -140,7 +152,6 @@ var level3 = function() {
 			if (this.value === letter) {
        			 ncorrect++;
        			 document.getElementById('ncorrect').innerHTML = ncorrect;
-       			 console.log(ncorrect);
        			 if(ncorrect > highscore)
 				localStorage.setItem("highscore", ncorrect);
 			 localStorage.setItem("ncorrect", ncorrect);
@@ -149,7 +160,6 @@ var level3 = function() {
     			else {
       			 ncorrect = 0;
       			 document.getElementById('ncorrect').innerHTML = ncorrect;
-      			 console.log(ncorrect + ", wrong");
       			 localStorage.setItem("ncorrect", ncorrect);
       			 document.location.href = "practice.html";
       			}
@@ -159,6 +169,151 @@ var level3 = function() {
 	return ncorrect;
 }
 
+var level4 = function() {
+	var letter = Math.floor(Math.random()*2); // multiple random symbols // what letters/symbols
+        switch(letter) {
+          case 0:
+            letter = initialize_lower();
+          case 1:
+            letter = initialize_upper();
+        }
+
+        var enoughtime = 1;
+        var notenoughtime = function() {
+            enoughtime = 0;
+        }
+        
+	ncorrect = localStorage.getItem("ncorrect");
+			
+	document.getElementById('letter').innerHTML = letter;
+	document.getElementById('ncorrect').innerHTML = ncorrect;
+	document.getElementById('highscore').innerHTML = highscore;
+	
+	if (ncorrect >= 100){
+		localStorage.setItem("ncorrect", 0);
+		congrats();
+	}
+	
+        var timer = setTimeout(notenoughtime, 4000); // how much time
+
+	$(document).ready(function(){
+		$('#keyinput').keyup(function(){
+			if (this.value === letter && enoughtime) {
+       			 ncorrect++;
+       			 document.getElementById('ncorrect').innerHTML = ncorrect;
+       			 if(ncorrect > highscore)
+				localStorage.setItem("highscore", ncorrect);
+			 localStorage.setItem("ncorrect", ncorrect);
+       			 document.location.href = "practice.html";
+       			}
+    			else {
+      			 ncorrect = 0;
+      			 document.getElementById('ncorrect').innerHTML = ncorrect;
+      			 localStorage.setItem("ncorrect", ncorrect);
+      			 document.location.href = "practice.html";
+      			}
+      	});
+	});
+	
+	return ncorrect;
+}
+
+var level5 = function() {
+	var letter = Math.floor(Math.random()*2); // multiple random symbols // what letters/symbols
+        switch(letter) {
+          case 0:
+            letter = initialize_lower();
+          case 1:
+            letter = initialize_upper();
+        }
+
+        var enoughtime = 1;
+        var notenoughtime = function() {
+            enoughtime = 0;
+        }
+        
+	ncorrect = localStorage.getItem("ncorrect");
+			
+	document.getElementById('letter').innerHTML = letter;
+	document.getElementById('ncorrect').innerHTML = ncorrect;
+	document.getElementById('highscore').innerHTML = highscore;
+	
+	if (ncorrect >= 100){
+		localStorage.setItem("ncorrect", 0);
+		congrats();
+	}
+	
+        var timer = setTimeout(notenoughtime, 3000); // how much time
+
+	$(document).ready(function(){
+		$('#keyinput').keyup(function(){
+			if (this.value === letter && enoughtime) {
+       			 ncorrect++;
+       			 document.getElementById('ncorrect').innerHTML = ncorrect;
+       			 if(ncorrect > highscore)
+				localStorage.setItem("highscore", ncorrect);
+			 localStorage.setItem("ncorrect", ncorrect);
+       			 document.location.href = "practice.html";
+       			}
+    			else {
+      			 ncorrect = 0;
+      			 document.getElementById('ncorrect').innerHTML = ncorrect;
+      			 localStorage.setItem("ncorrect", ncorrect);
+      			 document.location.href = "practice.html";
+      			}
+      	});
+	});
+	
+	return ncorrect;
+}
+var level6 = function() {
+	var letter = Math.floor(Math.random()*2); // multiple random symbols // what letters/symbols
+        switch(letter) {
+          case 0:
+            letter = initialize_lower();
+          case 1:
+            letter = initialize_upper();
+        }
+
+        var enoughtime = 1;
+        var notenoughtime = function() {
+            enoughtime = 0;
+        }
+        
+	ncorrect = localStorage.getItem("ncorrect");
+			
+	document.getElementById('letter').innerHTML = letter;
+	document.getElementById('ncorrect').innerHTML = ncorrect;
+	document.getElementById('highscore').innerHTML = highscore;
+	
+	if (ncorrect >= 100){
+		localStorage.setItem("ncorrect", 0);
+		congrats();
+	}
+	
+        var timer = setTimeout(notenoughtime, 1500); // how much time
+
+	$(document).ready(function(){
+		$('#keyinput').keyup(function(){
+			if (this.value === letter && enoughtime) {
+       			 ncorrect++;
+       			 document.getElementById('ncorrect').innerHTML = ncorrect;
+       			 if(ncorrect > highscore)
+				localStorage.setItem("highscore", ncorrect);
+			 localStorage.setItem("ncorrect", ncorrect);
+       			 document.location.href = "practice.html";
+       			}
+    			else {
+      			 ncorrect = 0;
+      			 document.getElementById('ncorrect').innerHTML = ncorrect;
+      			 localStorage.setItem("ncorrect", ncorrect);
+      			 document.location.href = "practice.html";
+      			}
+      	});
+	});
+	
+	return ncorrect;
+}
 var congrats = function () {
 	document.location.href = "congrats.html";
 }
