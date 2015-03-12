@@ -2,13 +2,14 @@
 var ncorrect = 0;
 var highscore = 0;
 var currentlevel;
+var levelup = 0;
 
 var letterlearner = function () {
         
 	if(highscore < localStorage.getItem("highscore"))
-		highscore = localStorage.getItem("highscore");
+		highscore = +localStorage.getItem("highscore");
 
-        currentlevel = localStorage.getItem("currentlevel");
+        currentlevel = +localStorage.getItem("currentlevel");
         if(!currentlevel)
                 currentlevel = 1;
 
@@ -53,11 +54,14 @@ var letterlearner = function () {
             level13();
             break;
           case 14:
-            level12();
+            level14();
             break;
           case 15:
-            level13();
+            level15();
             break;
+          case 16:
+            localStorage.setItem("currentlevel", 1);
+            document.location.href = "practice.html";
           default:
             console.log("ERROR: not a level");
 	}
@@ -83,31 +87,40 @@ var initialize_number = function() {
 }
 
 var untimed_level = function(letter) { 	
-	ncorrect = localStorage.getItem("ncorrect");
-			
+	ncorrect = +localStorage.getItem("ncorrect");
+        levelup = +localStorage.getItem("levelup");
+	
+        if(levelup === 26)
+        {
+          currentlevel++;
+          levelup = 0;
+          localStorage.setItem("levelup", levelup);
+          localStorage.setItem("currentlevel", currentlevel);
+          document.location.href = "practice.html";
+        }
+
 	document.getElementById('letter').innerHTML = letter;
 	document.getElementById('ncorrect').innerHTML = ncorrect;
 	document.getElementById('highscore').innerHTML = highscore;
-	
-	if (ncorrect >= 100){
-		localStorage.setItem("ncorrect", 0);
-		congrats();
-	}
 	
 	$(document).ready(function(){
 		$('#keyinput').keyup(function(){
 			if (this.value === letter) {
        			 ncorrect++;
+                         levelup++;
        			 document.getElementById('ncorrect').innerHTML = ncorrect;
        			 if(ncorrect > highscore)
 				localStorage.setItem("highscore", ncorrect);
 			 localStorage.setItem("ncorrect", ncorrect);
+                         localStorage.setItem("levelup", levelup);
        			 document.location.href = "practice.html";
        			}
     			else {
       			 ncorrect = 0;
+                         levelup = 0;
       			 document.getElementById('ncorrect').innerHTML = ncorrect;
       			 localStorage.setItem("ncorrect", ncorrect);
+                         localStorage.setItem("levelup", levelup);
       			 document.location.href = "practice.html";
       			}
         	});
@@ -122,16 +135,21 @@ var timed_level = function(letter, time) {
             enoughtime = 0;
         }
         
-	ncorrect = localStorage.getItem("ncorrect");
+	ncorrect = +localStorage.getItem("ncorrect");
+        levelup = +localStorage.getItem("levelup");
+
+        if(levelup === 26) 
+        {
+          currentlevel++;
+          levelup = 0;
+          localStorage.setItem("levelup", levelup);
+          localStorage.setItem("currentlevel", currentlevel);
+          document.location.href = "practice.html";
+        }
 			
 	document.getElementById('letter').innerHTML = letter;
 	document.getElementById('ncorrect').innerHTML = ncorrect;
 	document.getElementById('highscore').innerHTML = highscore;
-	
-	if (ncorrect >= 100){
-		localStorage.setItem("ncorrect", 0);
-		congrats();
-	}
 	
         var timer = setTimeout(notenoughtime, time); // how much time
 
@@ -139,18 +157,22 @@ var timed_level = function(letter, time) {
 		$('#keyinput').keyup(function(){
 			if (this.value === letter && enoughtime) {
        			 ncorrect++;
+                         levelup++;
        			 document.getElementById('ncorrect').innerHTML = ncorrect;
        			 if(ncorrect > highscore)
 				localStorage.setItem("highscore", ncorrect);
 			 localStorage.setItem("ncorrect", ncorrect);
+                         localStorage.setItem("levelup", levelup);
        			 document.location.href = "practice.html";
        			}
     			else {
                          if(!enoughtime)
                            document.getElementById('prompt').innerHTML = "Too Slow!";
       			 ncorrect = 0;
+                         levelup = 0;
       			 document.getElementById('ncorrect').innerHTML = ncorrect;
       			 localStorage.setItem("ncorrect", ncorrect);
+                         localStorage.setItem("levelup", levelup);
       			 document.location.href = "practice.html";
       			}
         	});

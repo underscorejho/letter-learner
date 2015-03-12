@@ -8,45 +8,45 @@ Users and accounts
 
 Levels
  - 26 correct to move up a level
- - faster times
- - different capitalizations
- - symbols
- - numbers
+ - faster times -done
+ - different capitalizations -done
+ - symbols -done
+ - numbers -done
  - phrases
  - level select
  - replay levels
  - level descriptions
 
  level 1
-  lowercase, no time, 26 random letters
+  lowercase, no time, 26 random letters -done
  level 2
-  lowercase, timed
+  lowercase, timed -done
  level 3
-  lower + upper case
+  lower + upper case -done
  level 4
-  lower + upper case, timed
+  lower + upper case, timed -done
  level 5
-  faster level 4
+  faster level 4 -done
  level 6
-  faster level 5
+  faster level 5 -done
  level 7 
-  symbols 1
+  symbols 1 -done
  level 7.1
-  symbols 2
+  symbols 2 -done
  level 7.2
-  symbols, timed
+  symbols, timed -done
  level 8
-  letters + symbols
+  letters + symbols -done
  level 9
-  level 8 timed
+  level 8 timed -done
  level 10
-  level 9
+  level 9 -done
  level 11
-  all + numbers
+  all + numbers -done
  level 12
-  level 11 timed
+  level 11 timed -done
  level 13
-  level 12 faster
+  level 12 faster -done
  level 14
   timed phrases
  level 15
