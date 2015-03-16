@@ -96,7 +96,7 @@ var untimed_level = function(letter) {
           levelup = 0;
           localStorage.setItem("levelup", levelup);
           localStorage.setItem("currentlevel", currentlevel);
-          document.location.href = "practice.html";
+          document.location.href = "levelselect.html";
         }
 
 	document.getElementById('letter').innerHTML = letter;
@@ -144,7 +144,7 @@ var timed_level = function(letter, time) {
           levelup = 0;
           localStorage.setItem("levelup", levelup);
           localStorage.setItem("currentlevel", currentlevel);
-          document.location.href = "practice.html";
+          document.location.href = "levelselect.html";
         }
 			
 	document.getElementById('letter').innerHTML = letter;
