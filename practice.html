@@ -1,41 +1,47 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Letter Learner</title>
-		<link type="text/css" rel="stylesheet" href="stylesheet.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
-		<script type="text/javascript" src="main.js"></script>
-		<meta charset="UTF-8">
-	</head>
-	<body>
-		<div id="sidebar">
-			<p>
-				Number Correct: 
-			</p>
-			<p id="ncorrect"></p>
-			<p>
-				High Score: 
-			</p>
-			<p id="highscore"></p>
-			<p>
-				Instructions:
-				<ul>
-					<li>Type the letters in the space provided.</li>
-					<li>Keep going until you hit 100!</li>
-					<li>If you make a mistake, your score will drop to zero.</li>
-					<li>Remember to use Good Form!</li>
-				</ul>
-			</p>
-		</div>
-		<div id="typehere">
-			<p>" <strong id="letter"></strong> "</p>
-			<form id="typethis">
-				
-				<strong id="prompt">Type Here!</strong><br>
-				<input id="keyinput" type="text" autofocus>
-				<script type="text/javascript">letterlearner();</script>
-			</form>
-			
-		</div>
-	</body>
+    <head>
+        <title>Letter Learner</title>
+        <link type="text/css" rel="stylesheet" href="stylesheet.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="main.js"></script>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 class="ribbon">
+             <strong class="ribbon-content">Level 1</strong>
+        </h1>
+        
+    <h3>
+        <div id="sidebar">
+            <p> <span>
+                Number Correct: 
+                </span>
+            </p>
+            <p id="ncorrect"></p>
+        </div>
+        
+       <div id="sidebar2">
+            <p> <span>
+                High Score: 
+                </span>
+            </p>
+            <p id="highscore"></p>
+        </div>
+
+    </h3>
+        
+        
+        
+        <div id="typehere">
+            <p>" <strong id="letter"></strong> "</p>
+            <form id="typethis">
+                
+                <strong id="prompt">Type Here!</strong><br>
+                <input id="keyinput" type="text" autofocus>
+                <script type="text/javascript">letterlearner();</script>
+            </form>
+            
+        </div>
+    </body>
 </html>
