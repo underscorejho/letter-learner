@@ -86,18 +86,22 @@ var initialize_number = function() {
   return String.fromCharCode(Math.floor(Math.random()*10)+48); // random digit 0 - 9
 }
 
-var untimed_level = function(letter) { 	
-	ncorrect = +localStorage.getItem("ncorrect");
-        levelup = +localStorage.getItem("levelup");
-	
+var new_level = function(level) {
         if(levelup === 26)
         {
-          currentlevel++;
+          currentlevel = level;
           levelup = 0;
           localStorage.setItem("levelup", levelup);
           localStorage.setItem("currentlevel", currentlevel);
           document.location.href = "levelselect.html";
         }
+}
+
+var untimed_level = function(letter) { 	
+	ncorrect = +localStorage.getItem("ncorrect");
+        levelup = +localStorage.getItem("levelup");
+	
+        new_level(currentlevel + 1);
 
 	document.getElementById('letter').innerHTML = letter;
 	document.getElementById('ncorrect').innerHTML = ncorrect;
@@ -138,14 +142,7 @@ var timed_level = function(letter, time) {
 	ncorrect = +localStorage.getItem("ncorrect");
         levelup = +localStorage.getItem("levelup");
 
-        if(levelup === 26) 
-        {
-          currentlevel++;
-          levelup = 0;
-          localStorage.setItem("levelup", levelup);
-          localStorage.setItem("currentlevel", currentlevel);
-          document.location.href = "levelselect.html";
-        }
+        new_level(currentlevel + 1);
 			
 	document.getElementById('letter').innerHTML = letter;
 	document.getElementById('ncorrect').innerHTML = ncorrect;
