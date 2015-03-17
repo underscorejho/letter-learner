@@ -61,3 +61,11 @@ keyboard image/guide
 
 Fix constant reload issue
 
+---------------------------------------
+
+03/16 TODO
+
+-phrases/sentences
+-add level info on levelselect.html
+-programmatically set banner title
+-make shit look good
