@@ -60,6 +60,12 @@ var letterlearner = function () {
             level15();
             break;
           case 16:
+            level16();
+            break;
+          case 17:
+            level17();
+            break;
+          case 18:
             localStorage.setItem("currentlevel", 1);
             document.location.href = "practice.html";
           default:
@@ -85,6 +91,143 @@ var initialize_symbol2 = function() {
 var initialize_number = function() {
   return String.fromCharCode(Math.floor(Math.random()*10)+48); // random digit 0 - 9
 };
+var initialize_phrase = function() {
+  var phrase = Math.floor(Math.random()*20);
+  switch(phrase) {//  //------// lengths allowed
+    case 0:
+      phrase = "You and I";
+      break;
+    case 1:
+      phrase = "Xavier and You";
+      break;
+    case 2:
+      phrase = "Elephant Poo";
+      break;
+    case 3:
+      phrase = "Orange Grapes";
+      break;
+    case 4:
+      phrase = "no orangutans";
+      break;
+    case 5:
+      phrase = "Batman art";
+      break;
+    case 6:
+      phrase = "Aqua Man Farts";
+      break;
+    case 7:
+      phrase = "Dog water";
+      break;
+    case 8:
+      phrase = "not so cool cats";
+      break;
+    case 9:
+      phrase = "Hot tea for me";
+      break;
+    case 10:
+      phrase = "CAT HAIRBALLS";
+      break;
+    case 11:
+      phrase = "MATH IS FUN";
+      break;
+    case 12:
+      phrase = "UsE sHiFt";
+      break;
+    case 13:
+      phrase = "flying fish";
+      break;
+    case 14:
+      phrase = "number 9";
+      break;
+    case 15:
+      phrase = "nine numbers";
+      break;
+    case 16:
+      phrase = "8 OCTAVES";
+      break;
+    case 17:
+      phrase = "artistic airplanes";
+      break;
+    case 18:
+      phrase = "Capital Capitol";
+      break;
+    case 19:
+      phrase = "Zooey Zubats";
+      break;
+  }
+  return phrase;
+};
+var initialize_sentence = function() {
+  var sentence = Math.floor(Math.random()*20);
+  switch(sentence) {//_____________//----------//
+    case 0:
+      sentence = "NO, THIS IS PATRICK!";
+      break;
+    case 1:
+      sentence = "Pikachu, I choose YOU!";
+      break;
+    case 2:
+      sentence = "My favorite food is pizza.";
+      break;
+    case 3:
+      sentence = "8 people know I have 3 toes!";
+      break;
+    case 4:
+      sentence = "How many ants have you eaten?";
+      break;
+    case 5:
+      sentence = "(I'm whispering!)";
+      break;
+    case 6:
+      sentence = "I like strawberry ice cream...";
+      break;
+    case 7:
+      sentence = "One day, I'll draw cacti, you?";
+      break;
+    case 8:
+      sentence = "Check Yes or No... please?";
+      break;
+    case 9:
+      sentence = "Blue is not my favorite color.";
+      break;
+    case 10:
+      sentence = "I swing on sweet swings sometimes!";
+      break;
+    case 11:
+      sentence = "How are you today?";
+      break;
+    case 12:
+      sentence = "I am afraid of spiders.";
+      break;
+    case 13:
+      sentence = "Babies grow on Puerto Rican trees.";
+      break;
+    case 14:
+      sentence = "Mom, where do babies come from?";
+      break;
+    case 15:
+      sentence = "I have 4 homeworks tonight.";
+      break;
+    case 16:
+      sentence = "Aren't Artists Awesome?";
+      break;
+    case 17:
+      sentence = ":) :( :/ :P";
+      break;
+    case 18:
+      sentence = ":D :O :') O_O";
+      break;
+    case 19:
+      sentence = "UP down < Left Right >";
+      break;
+  }
+  return sentence;
+};
+
+function pause(ms) { // buggy and weird, but I like it better than setTimeout()
+ms += new Date().getTime();
+while (new Date() < ms){}
+} 
 
 var new_level = function(level) {
         if(levelup === 26)
@@ -162,9 +305,9 @@ var timed_level = function(letter, time) {
                          localStorage.setItem("levelup", levelup);
        			 document.location.href = "practice.html";
        			}
-    			else {
-                         if(!enoughtime)
-                           document.getElementById('prompt').innerHTML = "Too Slow!";
+    			else if(!enoughtime){
+                         document.getElementById('prompt').innerHTML = "Too Slow!";
+                         pause(500);
       			 ncorrect = 0;
                          levelup = 0;
       			 document.getElementById('ncorrect').innerHTML = ncorrect;
@@ -177,7 +320,6 @@ var timed_level = function(letter, time) {
 	
 	return ncorrect;
 };
-
 
 var practice = function() { // level 1
     var letter = initialize_lower(); // what letters/symbols
@@ -394,6 +536,16 @@ var level15 = function() { // letters + all symbols + numbers, timed
             break;
         }
     timed_level(letter, 1000);	
+};
+
+var level16 = function() {
+  letter = initialize_phrase();
+  timed_level(letter, 3500);
+};
+
+var level17 = function() {
+  letter = initialize_sentence();
+  timed_level(letter, 5000);
 };
 
 var congrats = function () {
