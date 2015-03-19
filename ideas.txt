@@ -69,3 +69,12 @@ Fix constant reload issue
 -add level info on levelselect.html
 -programmatically set banner title
 -make shit look good
+
+--------------------------------------
+
+03/18 TODO
+
+-phrases/sentences
+-set banner titles with js
+-levelselect button on practice.html
+-make buttons prettier (maybe) 
