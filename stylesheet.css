@@ -11,6 +11,7 @@ body {
     width : 400px;
     margin: auto;
     text-align: center;
+    color: white;
     
 }
 
@@ -29,14 +30,14 @@ body {
 
 #sidebar {
  margin: auto;
+ margin-left: 450px;
  
 
 }
 #sidebar2 {
 margin: auto;
-   
- 
-}
+margin-left: 700px; 
+ }
 
 h2 {
     
@@ -80,12 +81,13 @@ h3 /*number correct and high score */ {
     font-weight:lighter;
     font-variant:inherit; 
     color: black;
-    border-color: black;   */
+    border-color: black;*/   
 }
 
 
 #typethis {
     text-align: center;
+    
 }
 
 #congratsdiv {
@@ -102,30 +104,47 @@ h3 /*number correct and high score */ {
 #letter {
     font-size: 90px;
     margin: auto;
-    margin-top: 100px;
+    /*margin-top: 100px;*/
+    margin-bottom: 150px;
+    position: relative;
     font-weight:lighter;
     /* font-variant:inherit; */
     color: black;
     border-color: black;
-   /* text-shadow: 
-        -1px -1px 0px #000,
-         0px -1px 0px #000,
-         1px -1px 0px #000,
-        -1px  0px 0px #000,
-         1px  0px 0px #000,
-        -1px  1px 0px #000,
-         0px  1px 0px #000,
-         1px  1px 0px #000;
-    */
 }
 
 #typehere p {
+	
     text-align: center;
     margin-bottom: 80px;
 }
 
+#practicelevelbuttons {
+	list-style-type: none;
+}
+#levelbuttons {
+	list-style-type: none;
+	font-weight:lighter;
+	background-color: white;
+}
+#logintable {
+	color: white;
+	font-weight:lighter;
+}
+#logintable2 {
+	color: white;
+	font-weight:lighter;
+}
+.indexpage {
+	background-color: #007CCF;
+}
+.congratspage {
+	background-color: #007CCF;
+}
 
-
+#levelselectpage{
+	background-color: #007CCF;
+}
 
 
 

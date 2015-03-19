@@ -68,23 +68,23 @@ var letterlearner = function () {
 
 	return 0;
 	
-}
+};
 
 var initialize_lower = function() {
   return String.fromCharCode(Math.floor(Math.random()*26)+97); // random lowercase letter
-}
+};
 var initialize_upper = function() {
   return String.fromCharCode(Math.floor(Math.random()*26)+65); // random uppercase letter
-}
+};
 var initialize_symbol1 = function() {
   return String.fromCharCode(Math.floor(Math.random()*7)+58); // random symbol : ; , = > ? @
-}
+};
 var initialize_symbol2 = function() {
   return String.fromCharCode(Math.floor(Math.random()*15)+33); // random symbol ! " # $ % & ' ( ) * + , - . /
-}
+};
 var initialize_number = function() {
   return String.fromCharCode(Math.floor(Math.random()*10)+48); // random digit 0 - 9
-}
+};
 
 var new_level = function(level) {
         if(levelup === 26)
@@ -95,7 +95,7 @@ var new_level = function(level) {
           localStorage.setItem("currentlevel", currentlevel);
           document.location.href = "levelselect.html";
         }
-}
+};
 
 var untimed_level = function(letter) { 	
 	ncorrect = +localStorage.getItem("ncorrect");
@@ -131,13 +131,13 @@ var untimed_level = function(letter) {
 	});
 	
 	return ncorrect;
-}
+};
 
 var timed_level = function(letter, time) { 
         var enoughtime = 1;
         var notenoughtime = function() {
             enoughtime = 0;
-        }
+        };
         
 	ncorrect = +localStorage.getItem("ncorrect");
         levelup = +localStorage.getItem("levelup");
@@ -176,18 +176,18 @@ var timed_level = function(letter, time) {
 	});
 	
 	return ncorrect;
-}
+};
 
 
 var practice = function() { // level 1
     var letter = initialize_lower(); // what letters/symbols
     untimed_level(letter);
-}
+};
 
 var level2 = function() { // lowercase, timed
     var letter = initialize_lower(); // what letters/symbols
     timed_level(letter, 5000);
-}
+};
 
 var level3 = function() { // lower and upper case
     var letter = Math.floor(Math.random()*2); // multiple random symbols // what letters/symbols
@@ -200,7 +200,7 @@ var level3 = function() { // lower and upper case
             break;
         }
     untimed_level(letter);
-}
+};
 
 var level4 = function() { // lower and upper case timed
 	var letter = Math.floor(Math.random()*2); // multiple random symbols // what letters/symbols
@@ -213,7 +213,7 @@ var level4 = function() { // lower and upper case timed
             break;
         }
     timed_level(letter, 4000);
-}
+};
 
 var level5 = function() { // faster previous level
 	var letter = Math.floor(Math.random()*2); // multiple random symbols // what letters/symbols
@@ -226,7 +226,7 @@ var level5 = function() { // faster previous level
             break;
         }
     timed_level(letter, 5000);
-}
+};
 
 var level6 = function() { // faster previous level
 	var letter = Math.floor(Math.random()*2); // multiple random symbols // what letters/symbols
@@ -239,17 +239,17 @@ var level6 = function() { // faster previous level
             break;
         }
     timed_level(letter, 1500);
-}
+};
 
 var level7 = function() { // symbols 1
 	var letter = initialize_symbol1(); // what letters/symbols
 	untimed_level(letter);
-}
+};
 
 var level8 = function() { // symbols 2
 	var letter = initialize_symbol2(); // what letters/symbols
         untimed_level(letter);
-}
+};
 
 var level9 = function() { // letters + all symbols
 	var letter = Math.floor(Math.random()*4); // multiple random symbols // what letters/symbols
@@ -268,7 +268,7 @@ var level9 = function() { // letters + all symbols
             break;
         }
     untimed_level(letter);
-}
+};
 
 var level10 = function() { // letters + all symbols, timed
 	var letter = Math.floor(Math.random()*4); // multiple random symbols // what letters/symbols
@@ -287,7 +287,7 @@ var level10 = function() { // letters + all symbols, timed
             break;
         }
     timed_level(letter, 2000);
-}
+};
 
 var level11 = function() { // letters + all symbols, timed
 	var letter = Math.floor(Math.random()*4); // multiple random symbols // what letters/symbols
@@ -306,7 +306,7 @@ var level11 = function() { // letters + all symbols, timed
             break;
         }
     timed_level(letter, 1500);
-}
+};
 
 var level12 = function() { // letters + all symbols + numbers
 	var letter = Math.floor(Math.random()*5); // multiple random symbols // what letters/symbols
@@ -328,7 +328,7 @@ var level12 = function() { // letters + all symbols + numbers
             break;
         }
     untimed_level(letter);
-}
+};
 
 var level13 = function() { // letters + all symbols + numbers, timed
 	var letter = Math.floor(Math.random()*5); // multiple random symbols // what letters/symbols
@@ -350,7 +350,7 @@ var level13 = function() { // letters + all symbols + numbers, timed
             break;
         }
     timed_level(letter, 2000);	
-}
+};
 
 var level14 = function() { // letters + all symbols + numbers, timed
 	var letter = Math.floor(Math.random()*5); // multiple random symbols // what letters/symbols
@@ -372,7 +372,7 @@ var level14 = function() { // letters + all symbols + numbers, timed
             break;
         }
     timed_level(letter, 1500);	
-}
+};
 
 var level15 = function() { // letters + all symbols + numbers, timed
 	var letter = Math.floor(Math.random()*5); // multiple random symbols // what letters/symbols
@@ -394,9 +394,9 @@ var level15 = function() { // letters + all symbols + numbers, timed
             break;
         }
     timed_level(letter, 1000);	
-}
+};
 
 var congrats = function () {
 	document.location.href = "congrats.html";
-}
+};
 
