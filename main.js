@@ -245,6 +245,7 @@ var untimed_level = function(letter) {
         levelup = +localStorage.getItem("levelup");
 	
         new_level(currentlevel + 1);
+        document.getElementById('ribbon-content').innerHTML = "Level " + currentlevel;
 
 	document.getElementById('letter').innerHTML = letter;
 	document.getElementById('ncorrect').innerHTML = ncorrect;
@@ -286,6 +287,7 @@ var timed_level = function(letter, time) {
         levelup = +localStorage.getItem("levelup");
 
         new_level(currentlevel + 1);
+        document.getElementById('ribbon-content').innerHTML = "Level " + currentlevel;
 			
 	document.getElementById('letter').innerHTML = letter;
 	document.getElementById('ncorrect').innerHTML = ncorrect;

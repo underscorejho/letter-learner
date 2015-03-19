@@ -74,6 +74,5 @@ Fix constant reload issue
 
 03/18 TODO
 
--set banner titles with js
 -levelselect button on practice.html
 -make buttons prettier (maybe) 
