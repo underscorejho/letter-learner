@@ -542,12 +542,12 @@ var level15 = function() { // letters + all symbols + numbers, timed
 
 var level16 = function() {
   letter = initialize_phrase();
-  timed_level(letter, 3500);
+  timed_level(letter, 4000);
 };
 
 var level17 = function() {
   letter = initialize_sentence();
-  timed_level(letter, 5000);
+  timed_level(letter, 5500);
 };
 
 var congrats = function () {

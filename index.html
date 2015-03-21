@@ -13,58 +13,13 @@
 		<!--change this paragraph to something better later-->
 			<p>Letter Learner is designed to build your typing skills one keystroke at a time. We believe that this kind of quick and easy learning is the key to a better computer experience.</p>
 		</div>
-		<a id="startlink" href="practice.html"><img id="startbutton" src="gobutton.png"></a>
+
+		<button id="startlink" onclick="location.href='practice.html'">Click here to begin!</button>
+                <center><p style="color:white; font-style:italic;">or</p></center>
 		<br>
-		<center><input type="button" value="Level Select" onclick="window.location.href='levelselect.html'"></center>
+		<center><input type="button" id="levelselectbutton" value="Choose a level" onclick="window.location.href='levelselect.html'"></center>
 		<br>
-	<div>
-<script language="javascript">
-
-function pauser(form) {
-if (form.id.value==="Student") { 
-if (form.pass.value==="Letters") {              
-location="practice.html" 
-} 
-else 
-{
- alert("Password Incorrect")
-}
-} 
-else 
-{  
- alert("UserID Incorrect")
-}
-}
-
-</script>
-
-<script language ="javascript">
-function signup{
-location="signup.html"
-}
-</script>
-
-<div id="logintable" align="center">
-<table bgcolor="#007CCF" cellpadding="3" border="0">
-<tr>
-	<td colspan="3"><center><h1>Login Area</h1></center></td>
-</tr>
-<tr>
-	<td><h1>UserID:</h1></td>
-	<td><form name="login"><input name="id" type="text"></td>
-</tr>
-<tr>
-	<td><h1>Password:</h1></td>
-	<td><input name="pass" type="password"></td>
-</tr>
-
-<tr>
-	<td><center><input type="button" value="Login" onClick="pauser(this.form)"></center></td>
-	<td><center><a href="signup.html" style= "text-decoration:none"><input type="button" value="Sign Up"></a></center></td>
-	<td><center><br><input type="Reset"></form></td>
-</tr>
-</table>
-</div> 
-
+	        <center><p style="color:white; font-style:italic;">or</p></center>
+                <button id="startlink" onclick="location.href='login.html'">Login or Create an account</button>
 	</body>
 </html>

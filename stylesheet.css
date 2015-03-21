@@ -16,17 +16,46 @@ body {
 }
 
 #startlink {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     text-align: center;
+    display: list-item;
+    list-style-type: none;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+
+    font-family: Serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+
+    background-color: #007CCF;
+    border: none;
 }
 
-#startbutton {
-    display:list-item;
+#startlink:hover {
+    color: #99D6FF;
+}
+
+#levelselectbutton {
     margin: auto;
-    margin-top: 40px;
     text-align: center;
-  }
+    display: list-item;
+    list-style-type: none;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+
+    font-family: Serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+
+    background-color: #007CCF;
+    border: none;
+}
+
+#levelselectbutton:hover {
+    color: #99D6FF;
+}
 
 #sidebar {
  margin: auto;
@@ -39,14 +68,7 @@ margin: auto;
 margin-left: 700px; 
  }
 
-h2 {
-    
-    
-    
-    
-    
-    
-}
+
 h3 /*number correct and high score */ {
    margin: auto;
     margin-top: 5px;
@@ -138,10 +160,12 @@ h3 /*number correct and high score */ {
 .indexpage {
 	background-color: #007CCF;
 }
+.loginpage {
+	background-color: #007CCF;
+}
 .congratspage {
 	background-color: #007CCF;
 }
-
 #levelselectpage{
 	background-color: #007CCF;
 }

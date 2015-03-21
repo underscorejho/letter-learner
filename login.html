@@ -1,0 +1,61 @@
+<!-- login page -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Letter Learner</title>
+		<link type="text/css" rel="stylesheet" href="stylesheet.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+		<script src="main.js"></script>
+		<meta charset="UTF-8">
+	</head>
+	<body class= "loginpage">
+<div>
+<script language="javascript">
+
+var pauser = function(form) {
+if (form.id.value==="Student") { 
+if (form.pass.value==="Letters") {              
+location="practice.html" 
+} 
+else 
+{
+ alert("Password Incorrect")
+}
+} 
+else 
+{  
+ alert("UserID Incorrect")
+}
+}
+
+</script>
+
+<script language ="javascript">
+var signup = function(){
+location="signup.html"
+}
+</script>
+
+<div id="logintable" align="center">
+<table bgcolor="#007CCF" cellpadding="3" border="0">
+<tr>
+	<td colspan="3"><center><h1>Login Here</h1></center></td>
+</tr>
+<tr>
+	<td><h1>UserID:</h1></td>
+	<td><form name="login"><input name="id" type="text"></td>
+</tr>
+<tr>
+	<td><h1>Password:</h1></td>
+	<td><input name="pass" type="password"></td>
+</tr>
+
+<tr>
+	<td><center><input type="button" value="Login" onClick="pauser(this.form)"></center></td>
+	<td><center><a href="signup.html" style= "text-decoration:none"><input type="button" value="Sign Up"></a></center></td>
+	<td><center><br><input type="Reset"></form></td>
+</tr>
+</table>
+</div> 
+	</body>
+</html>
