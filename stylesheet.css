@@ -57,6 +57,27 @@ body {
     color: #99D6FF;
 }
 
+#loginbutton {
+    margin: auto;
+    text-align: center;
+    display: list-item;
+    list-style-type: none;
+    padding: 10px 10px 10px 10px;
+    margin-bottom: 10px;
+
+    font-family: Serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+
+    background-color: #007CCF;
+    border: none;
+}
+
+#loginbutton:hover {
+    color: #99D6FF;
+}
+
 #sidebar {
  margin: auto;
  margin-left: 450px;
@@ -70,7 +91,7 @@ margin-left: 700px;
 
 
 h3 /*number correct and high score */ {
-   margin: auto;
+    margin: auto;
     margin-top: 5px;
     font-weight:lighter;
     color: black;
