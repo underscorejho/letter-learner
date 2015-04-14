@@ -2,6 +2,10 @@
 
 *A keyboard learning website*
 
+**Live now on GitHub Pages!**
+<br>
+[letter-learner.github.io/](letter-learner.github.io/)
+
 
 **Instructions for desktop use:**
 
