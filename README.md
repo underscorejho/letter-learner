@@ -14,5 +14,3 @@
 3. Open the folder you extracted the files to and right click 'index.html'.
 4. Choose to open the file with a web browser of your choice.
 5. Learn your letters!
-
-Note: these instructions are intended for use while this website is not live.
