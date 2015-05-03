@@ -4,7 +4,7 @@
 
 **Live now on GitHub Pages!**
 <br>
-[letter-learner.github.io/](letter-learner.github.io/)
+[letter-learner.github.io/html](letter-learner.github.io/html)
 
 
 **Instructions for desktop use:**
